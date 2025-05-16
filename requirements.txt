@@ -1,0 +1,6 @@
+streamlit==1.31.1
+instaloader==4.14.1
+requests==2.32.3
+bs4
+beautifulsoup4==4.13.4
+pillow
