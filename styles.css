@@ -1,0 +1,176 @@
+
+/* Dark mode and global styles */
+body {
+    background-color: #0f1624 !important;
+    color: #ffffff !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInSlide {
+    0% { 
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Global text styles with animation */
+.st-emotion-cache-uf99v8, 
+.st-emotion-cache-16idsys p,
+.st-emotion-cache-183lzff,
+.st-emotion-cache-10trblm,
+.st-emotion-cache-q8sbsg p,
+.st-emotion-cache-1629p8f p,
+.stMarkdown, .stText, .stAlert p {
+    color: #ffffff !important;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Dark mode alerts */
+.stAlert {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Container styling */
+[data-testid="column"] {
+    padding: 0 !important;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* Input styling */
+.st-emotion-cache-16b5j9s input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.st-emotion-cache-16b5j9s input:focus {
+    border-color: #F56040 !important;
+    box-shadow: 0 0 15px rgba(245, 96, 64, 0.3);
+}
+
+/* Button styles with hover animation */
+.stButton button {
+    background: linear-gradient(45deg, #F56040, #E1306C) !important;
+    color: white !important;
+    border-radius: 8px !important;
+    font-weight: bold;
+    border: none !important;
+    padding: 12px 24px !important;
+    transition: all 0.3s ease !important;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.stButton button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(245, 96, 64, 0.3);
+}
+
+/* Title with enhanced gradient and animation */
+.app-title {
+    font-size: 3.5rem;
+    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-align: center;
+    font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    animation: fadeInSlide 1s ease-out;
+    transition: transform 0.3s ease;
+    letter-spacing: -1px;
+}
+
+.app-title:hover {
+    transform: translateY(-2px);
+}
+
+.app-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-style: italic;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Video frame styling */
+.video-frame {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Download button styling with hover effects */
+.stDownloadButton button {
+    background: linear-gradient(45deg, #F56040, #E1306C) !important;
+    color: white !important;
+    border-radius: 25px !important;
+    padding: 12px 24px !important;
+    font-weight: bold !important;
+    width: 100% !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.stDownloadButton button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(245, 96, 64, 0.4) !important;
+}
+
+/* Tab styling */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 12px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: linear-gradient(45deg, rgba(64, 93, 230, 0.2), rgba(225, 48, 108, 0.2)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white !important;
+    transition: all 0.3s ease;
+    padding: 8px 24px !important;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: linear-gradient(45deg, rgba(64, 93, 230, 0.3), rgba(225, 48, 108, 0.3)) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(45deg, #405DE6, #E1306C) !important;
+    border: none !important;
+    box-shadow: 0 8px 20px rgba(225, 48, 108, 0.3);
+}
