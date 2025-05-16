@@ -1,10 +1,4 @@
 
-/* Dark mode and global styles */
-body {
-    background-color: #0f1624 !important;
-    color: #ffffff !important;
-}
-
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -22,25 +16,33 @@ body {
     }
 }
 
-/* Global text styles with animation */
-.st-emotion-cache-uf99v8, 
-.st-emotion-cache-16idsys p,
-.st-emotion-cache-183lzff,
-.st-emotion-cache-10trblm,
-.st-emotion-cache-q8sbsg p,
-.st-emotion-cache-1629p8f p,
-.stMarkdown, .stText, .stAlert p {
-    color: #ffffff !important;
+/* Global styling with animation - works in both light and dark mode */
+.stMarkdown, .stText {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* Dark mode alerts */
+/* Alert styling that works in both modes */
 .stAlert {
-    background-color: rgba(255, 255, 255, 0.1) !important;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     animation: fadeIn 0.5s ease-out;
+}
+
+/* Specifically for dark mode alerts */
+[data-theme="dark"] .stAlert p {
+    color: white !important;
+}
+
+/* Fix for info alerts in dark mode */
+[data-theme="dark"] .st-emotion-cache-16idsys p, 
+[data-theme="dark"] .st-emotion-cache-7ym5gk, 
+[data-theme="dark"] .st-emotion-cache-16idsys {
+    color: white !important;
+}
+
+/* Light mode alerts */
+[data-theme="light"] .stAlert p {
+    color: #31333F !important;
 }
 
 /* Container styling */
@@ -50,11 +52,8 @@ body {
     align-items: flex-end;
 }
 
-/* Input styling */
+/* Input styling for both modes */
 .st-emotion-cache-16b5j9s input {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px;
     padding: 10px;
     transition: all 0.3s ease;
@@ -88,7 +87,7 @@ body {
     background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584);
     background-clip: text;
     -webkit-background-clip: text;
-    color: transparent;
+    color: transparent !important;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
     text-align: center;
@@ -104,20 +103,18 @@ body {
 
 .app-subtitle {
     text-align: center;
-    color: rgba(255, 255, 255, 0.8) !important;
     font-style: italic;
     font-size: 1.3rem;
     margin-bottom: 2rem;
     animation: fadeIn 0.8s ease-out;
+    /* Removing the color forcing to work with both themes */
 }
 
 /* Video frame styling */
 .video-frame {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     animation: fadeIn 1s ease-out;
 }
@@ -143,18 +140,14 @@ body {
 /* Tab styling */
 .stTabs [data-baseweb="tab-list"] {
     gap: 12px;
-    background-color: rgba(255, 255, 255, 0.03);
     padding: 12px;
     border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
 }
 
 .stTabs [data-baseweb="tab"] {
     background: linear-gradient(45deg, rgba(64, 93, 230, 0.2), rgba(225, 48, 108, 0.2)) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    color: white !important;
     transition: all 0.3s ease;
     padding: 8px 24px !important;
     font-weight: 500;
@@ -173,4 +166,5 @@ body {
     background: linear-gradient(45deg, #405DE6, #E1306C) !important;
     border: none !important;
     box-shadow: 0 8px 20px rgba(225, 48, 108, 0.3);
+    color: white !important;
 }
