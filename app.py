@@ -53,23 +53,14 @@ with tab1:
     3. Preview the video and download it to your device
     """)
 
-    # Input field for Instagram URL with paste button
+    # Input field for Instagram URL with example and URL explanation
     url_container = st.container()
     with url_container:
-        col1, col2 = st.columns([5, 1])
-        with col1:
-            instagram_url = st.text_input("Enter Instagram Video URL:", placeholder="https://www.instagram.com/p/...", label_visibility="visible")
-        with col2:
-            st.markdown('<div style="margin-top: 25px;">', unsafe_allow_html=True)
-            if st.button("📋 Paste", use_container_width=True):
-                try:
-                    import pyperclip
-                    clipboard_text = pyperclip.paste()
-                    if is_valid_instagram_url(clipboard_text):
-                        st.session_state['instagram_url'] = clipboard_text
-                        st.rerun()
-                except:
-                    st.error("Could not access clipboard")
+        instagram_url = st.text_input(
+            "Enter Instagram Video URL:",
+            placeholder="https://www.instagram.com/p/...",
+            label_visibility="visible"
+        )
 
     # Create containers for status and video
     status_container = st.empty()
